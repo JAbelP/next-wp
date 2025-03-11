@@ -5,9 +5,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: `${process.env.WORDPRESS_HOSTNAME}`,
+        hostname: process.env.WORDPRESS_HOSTNAME || "", // Ensure this variable is defined
         port: "",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "heidydelacruz.com",
+        port: "",
+        pathname: "/**", // Ensure pathname is included
       },
     ],
   },
